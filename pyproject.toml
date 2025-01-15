@@ -1,0 +1,39 @@
+[project]
+name = "ft-icon"
+version = "0.1.0"
+description = "SVG sprite builder and Icon component system for FastHTML"
+readme = "README.md"
+authors = [{ name = "promptsiren", email = "promptsiren@gmail.com" }]
+dependencies = [
+    "python-fasthtml>=0.1.0",
+    "tw-merge",
+]
+requires-python = ">=3.11"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ft_icon"]
+exclude = ["example/*"]
+
+[project.scripts]
+build = "ft_icon.build_sprite:main"
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.uv.sources]
+tw-merge = { git = "https://github.com/banditburai/tw-merge.git" }
+
+[tool.hatch.build]
+exclude = [
+    "example/",
+    "icons/",
+    "static/",
+    "styles/",
+    "*.svg",
+    "*.css",
+]

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="icons.lightning" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+  </symbol>
+  <symbol id="icons.search" viewBox="0 0 16 16" data-og-pattern="fill" data-og-fill-rule="evenodd">
+    <path d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd" />
+  </symbol>
+  <symbol id="icons.volume-off" viewBox="0 0 24 24" data-og-pattern="mixed">
+    <path d="M3,9H7L12,4V20L7,15H3V9M16.59,12L14,9.41L15.41,8L18,10.59L20.59,8L22,9.41L19.41,12L22,14.59L20.59,16L18,13.41L15.41,16L14,14.59L16.59,12Z" />
+  </symbol>
+  <symbol id="icons.hamburger" viewBox="0 0 512 512" data-og-pattern="mixed">
+    <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+  </symbol>
+  <symbol id="icons.right-arrow" viewBox="0 0 24 24" data-og-pattern="mixed">
+    <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+  </symbol>
+  <symbol id="icons.user" viewBox="0 0 16 16" data-og-pattern="mixed">
+    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+  </symbol>
+  <symbol id="icons.home" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+  </symbol>
+  <symbol id="icons.file" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+  </symbol>
+  <symbol id="icons.smol-moon" viewBox="0 0 24 24" data-og-pattern="mixed" data-og-stroke="currentColor" data-og-stroke-width="2" data-og-stroke-linecap="round" data-og-stroke-linejoin="round" data-og-fill="none">
+    <g>
+      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+    </g>
+  </symbol>
+  <symbol id="icons.x" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M6 18L18 6M6 6l12 12" />
+  </symbol>
+  <symbol id="icons.smol-sun" viewBox="0 0 24 24" data-og-pattern="mixed" data-og-stroke="currentColor" data-og-stroke-width="2" data-og-stroke-linecap="round" data-og-stroke-linejoin="round" data-og-fill="none">
+    <g>
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2" />
+      <path d="M12 20v2" />
+      <path d="m4.93 4.93 1.41 1.41" />
+      <path d="m17.66 17.66 1.41 1.41" />
+      <path d="M2 12h2" />
+      <path d="M20 12h2" />
+      <path d="m6.34 17.66-1.41 1.41" />
+      <path d="m19.07 4.93-1.41 1.41" />
+    </g>
+  </symbol>
+  <symbol id="icons.question" viewBox="0 0 24 24" data-og-pattern="fill" data-og-fill-rule="evenodd">
+    <path d="M12,23 C5.92486775,23 1,18.0751322 1,12 C1,5.92486775 5.92486775,1 12,1 C18.0751322,1 23,5.92486775 23,12 C23,18.0751322 18.0751322,23 12,23 Z M12,21 C16.9705627,21 21,16.9705627 21,12 C21,7.02943725 16.9705627,3 12,3 C7.02943725,3 3,7.02943725 3,12 C3,16.9705627 7.02943725,21 12,21 Z M12.0003283,16.9983464 C11.4478622,16.9983464 11,16.5506311 11,15.9983464 C11,15.4460616 11.4478622,14.9983464 12.0003283,14.9983464 C12.5527943,14.9983464 13.0006565,15.4460616 13.0006565,15.9983464 C13.0006565,16.5506311 12.5527943,16.9983464 12.0003283,16.9983464 Z M13,14 L11,14 C11,12.2983529 11.6245803,11.5696759 13.0527864,10.8555728 C13.8745803,10.4446759 14,10.2983529 14,9.5 C14,8.556407 13.2771608,8 12,8 C10.8954305,8 10,8.8954305 10,10 L8,10 C8,7.790861 9.790861,6 12,6 C14.2843464,6 16,7.32062807 16,9.5 C16,11.2016471 15.3754197,11.9303241 13.9472136,12.6444272 C13.1254197,13.0553241 13,13.2016471 13,14 Z" />
+  </symbol>
+  <symbol id="icons.menu-bars" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M4 6h16M4 12h16M4 18h16" />
+  </symbol>
+  <symbol id="icons.three-dots" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+  </symbol>
+  <symbol id="icons.clipboard" viewBox="0 0 32 32" data-og-pattern="mixed">
+    <path d="M16 3 C 14.742188 3 13.847656 3.890625 13.40625 5 L 6 5 L 6 28 L 26 28 L 26 5 L 18.59375 5 C 18.152344 3.890625 17.257813 3 16 3 Z M 16 5 C 16.554688 5 17 5.445313 17 6 L 17 7 L 20 7 L 20 9 L 12 9 L 12 7 L 15 7 L 15 6 C 15 5.445313 15.445313 5 16 5 Z M 8 7 L 10 7 L 10 11 L 22 11 L 22 7 L 24 7 L 24 26 L 8 26 Z" />
+  </symbol>
+  <symbol id="icons.key" viewBox="0 0 16 16" data-og-pattern="fill" data-og-fill-rule="evenodd">
+    <path d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z" clip-rule="evenodd" />
+  </symbol>
+  <symbol id="icons.theme-generator" viewBox="0 0 48 48" data-og-pattern="stroke" data-og-stroke="currentColor" data-og-stroke-width="4" data-og-stroke-linecap="butt" data-og-stroke-linejoin="bevel">
+    <path d="M20.1005 8.1005L24.3431 12.3431M30 4V10V4ZM39.8995 8.1005L35.6569 12.3431L39.8995 8.1005ZM44 18H38H44ZM39.8995 27.8995L35.6569 23.6569L39.8995 27.8995ZM30 32V26V32ZM20.1005 27.8995L24.3431 23.6569L20.1005 27.8995ZM16 18H22H16Z" />
+    <path d="M29.5856 18.4143L5.54395 42.4559" />
+  </symbol>
+  <symbol id="icons.mockup" viewBox="0 0 48 48" data-og-pattern="mixed" data-og-stroke="currentColor" data-og-stroke-width="4" data-og-stroke-linecap="butt" data-og-stroke-linejoin="bevel" data-og-fill="none">
+    <path d="M8 30H40V42C40 43.1046 39.1046 44 38 44H10C8.89543 44 8 43.1046 8 42V30Z" />
+    <path d="M40 30V6C40 4.89543 39.1046 4 38 4H10C8.89543 4 8 4.89543 8 6V30" />
+    <path d="M22 37H26" />
+  </symbol>
+  <symbol id="icons.store" viewBox="0 0 48 48" data-og-pattern="mixed" data-og-stroke="currentColor" data-og-stroke-width="4" data-og-stroke-linecap="butt" data-og-stroke-linejoin="bevel" data-og-fill="none">
+    <path d="M20 29H6V43H20V29Z" />
+    <path d="M24 4L34 21H14L24 4Z" />
+    <path d="M36 44C40.4183 44 44 40.4183 44 36C44 31.5817 40.4183 28 36 28C31.5817 28 28 31.5817 28 36C28 40.4183 31.5817 44 36 44Z" />
+  </symbol>
+  <symbol id="icons.settings" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+  </symbol>
+  <symbol id="icons.archive" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+  </symbol>
+  <symbol id="icons.actions" viewBox="0 0 48 48" data-og-pattern="mixed" data-og-stroke-width="4" data-og-stroke-linecap="butt" data-og-stroke-linejoin="bevel" data-og-fill-rule="evenodd">
+    <path d="M24 4V12" />
+    <path d="M22 22L42 26L36 30L42 36L36 42L30 36L26 42L22 22Z" clip-rule="evenodd" />
+    <path d="M38.1421 9.85789L32.4853 15.5147" />
+    <path d="M9.85787 38.1421L15.5147 32.4853" />
+    <path d="M4 24H12" />
+    <path d="M9.85795 9.85787L15.5148 15.5147" />
+  </symbol>
+  <symbol id="icons.data-input" viewBox="0 0 48 48" data-og-pattern="mixed" data-og-stroke="currentColor" data-og-stroke-width="4" data-og-stroke-linecap="butt" data-og-stroke-linejoin="bevel" data-og-fill="none">
+    <path d="M7 42H43" />
+    <path d="M11 26.7199V34H18.3172L39 13.3081L31.6951 6L11 26.7199Z" />
+  </symbol>
+  <symbol id="icons.left-arrow" viewBox="0 0 24 24" data-og-pattern="mixed">
+    <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+  </symbol>
+  <symbol id="icons.warning" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+  </symbol>
+  <symbol id="icons.notification-bell" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+  </symbol>
+  <symbol id="icons.email" viewBox="0 0 16 16" data-og-pattern="mixed">
+    <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
+    <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
+  </symbol>
+  <symbol id="icons.info" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </symbol>
+  <symbol id="icons.add-doc" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+  </symbol>
+  <symbol id="icons.close" viewBox="0 0 512 512" data-og-pattern="mixed">
+    <polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
+  </symbol>
+  <symbol id="icons.volume-on" viewBox="0 0 24 24" data-og-pattern="mixed">
+    <path d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" />
+  </symbol>
+  <symbol id="icons.circled-check" viewBox="0 0 20 20" data-og-pattern="fill" data-og-fill-rule="evenodd">
+    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+  </symbol>
+  <symbol id="icons.image" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+  </symbol>
+  <symbol id="icons.navigation" viewBox="0 0 48 48" data-og-pattern="stroke" data-og-stroke="currentColor" data-og-stroke-width="4" data-og-stroke-linecap="butt" data-og-stroke-linejoin="bevel">
+    <path d="M30 19H20C15.5817 19 12 22.5817 12 27C12 31.4183 15.5817 35 20 35H36C40.4183 35 44 31.4183 44 27C44 24.9711 43.2447 23.1186 42 21.7084" />
+    <path d="M6 24.2916C4.75527 22.8814 4 21.0289 4 19C4 14.5817 7.58172 11 12 11H28C32.4183 11 36 14.5817 36 19C36 23.4183 32.4183 27 28 27H18" />
+  </symbol>
+  <symbol id="icons.facebook" viewBox="0 0 24 24" data-og-pattern="mixed">
+    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+  </symbol>
+  <symbol id="icons.feedback" viewBox="0 0 48 48" data-og-pattern="mixed" data-og-stroke="currentColor" data-og-stroke-width="4" data-og-stroke-linecap="butt" data-og-stroke-linejoin="bevel" data-og-fill="none">
+    <path d="M4 6H44V36H29L24 41L19 36H4V6Z" />
+    <path d="M23 21H25.0025" />
+    <path d="M33.001 21H34.9999" />
+    <path d="M13.001 21H14.9999" />
+  </symbol>
+  <symbol id="icons.down-caret" viewBox="0 0 2048 2048" data-og-pattern="mixed">
+    <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z" />
+  </symbol>
+  <symbol id="icons.hashtag" viewBox="0 0 24 24" data-og-pattern="fill" data-og-fill-rule="evenodd">
+    <path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z" clip-rule="evenodd" />
+  </symbol>
+  <symbol id="icons.folder-2" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+  </symbol>
+  <symbol id="icons.sun" viewBox="0 0 24 24" data-og-pattern="mixed">
+    <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+  </symbol>
+  <symbol id="icons.edit" viewBox="0 0 24 24" data-og-pattern="mixed">
+    <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
+  </symbol>
+  <symbol id="icons.bug" viewBox="0 0 1792 1792" data-og-pattern="mixed">
+    <path d="M1696 960q0 26-19 45t-45 19h-224q0 171-67 290l208 209q19 19 19 45t-19 45q-18 19-45 19t-45-19l-198-197q-5 5-15 13t-42 28.5-65 36.5-82 29-97 13v-896h-128v896q-51 0-101.5-13.5t-87-33-66-39-43.5-32.5l-15-14-183 207q-20 21-48 21-24 0-43-16-19-18-20.5-44.5t15.5-46.5l202-227q-58-114-58-274h-224q-26 0-45-19t-19-45 19-45 45-19h224v-294l-173-173q-19-19-19-45t19-45 45-19 45 19l173 173h844l173-173q19-19 45-19t45 19 19 45-19 45l-173 173v294h224q26 0 45 19t19 45z" />
+  </symbol>
+  <symbol id="icons.youtube" viewBox="0 0 24 24" data-og-pattern="mixed">
+    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+  </symbol>
+  <symbol id="icons.search-circle" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+  </symbol>
+  <symbol id="icons.menu-bars-uneven" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M4 6h16M4 12h8m-8 6h16" />
+  </symbol>
+  <symbol id="icons.data-display" viewBox="0 0 48 48" data-og-pattern="mixed" data-og-stroke="currentColor" data-og-stroke-width="4" data-og-stroke-linejoin="bevel" data-og-fill="none">
+    <rect x="4" y="8" width="40" height="32" rx="3" />
+    <path d="M4 11C4 9.34315 5.34315 8 7 8H41C42.6569 8 44 9.34315 44 11V20H4V11Z" />
+    <circle r="2" transform="matrix(-1.31134e-07 -1 -1 1.31134e-07 10 14)" />
+    <circle r="2" transform="matrix(-1.31134e-07 -1 -1 1.31134e-07 16 14)" />
+  </symbol>
+  <symbol id="icons.success" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </symbol>
+  <symbol id="icons.docs" viewBox="0 0 48 48" data-og-pattern="mixed" data-og-stroke="currentColor" data-og-stroke-width="4" data-og-stroke-linejoin="bevel" data-og-fill="none">
+    <path d="M5 7H16C20.4183 7 24 10.5817 24 15V42C24 38.6863 21.3137 36 18 36H5V7Z" />
+    <path d="M43 7H32C27.5817 7 24 10.5817 24 15V42C24 38.6863 26.6863 36 30 36H43V7Z" />
+  </symbol>
+  <symbol id="icons.twitter" viewBox="0 0 24 24" data-og-pattern="mixed">
+    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+  </symbol>
+  <symbol id="icons.heart2" viewBox="0 0 512 512" data-og-pattern="mixed">
+    <path d="M256,448a32,32,0,0,1-18-5.57c-78.59-53.35-112.62-89.93-131.39-112.8-40-48.75-59.15-98.8-58.61-153C48.63,114.52,98.46,64,159.08,64c44.08,0,74.61,24.83,92.39,45.51a6,6,0,0,0,9.06,0C278.31,88.81,308.84,64,352.92,64,413.54,64,463.37,114.52,464,176.64c.54,54.21-18.63,104.26-58.61,153-18.77,22.87-52.8,59.45-131.39,112.8A32,32,0,0,1,256,448Z" />
+  </symbol>
+  <symbol id="icons.menu-bars-short" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M4 6h16M4 12h16M4 18h7" />
+  </symbol>
+  <symbol id="icons.error" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </symbol>
+  <symbol id="icons.components" viewBox="0 0 48 48" data-og-pattern="mixed" data-og-stroke="currentColor" data-og-stroke-width="4" data-og-stroke-linecap="butt" data-og-stroke-linejoin="bevel" data-og-fill="none">
+    <path d="M20 29H6V43H20V29Z" />
+    <path d="M24 4L34 21H14L24 4Z" />
+    <path d="M36 44C40.4183 44 44 40.4183 44 36C44 31.5817 40.4183 28 36 28C31.5817 28 28 31.5817 28 36C28 40.4183 31.5817 44 36 44Z" />
+  </symbol>
+  <symbol id="icons.shopping-cart" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+  </symbol>
+  <symbol id="icons.stats" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+  </symbol>
+  <symbol id="icons.folder" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+  </symbol>
+  <symbol id="icons.clipboard-check" viewBox="0 0 32 32" data-og-pattern="mixed">
+    <path d="M 16 2 C 14.742188 2 13.847656 2.890625 13.40625 4 L 5 4 L 5 29 L 27 29 L 27 4 L 18.59375 4 C 18.152344 2.890625 17.257813 2 16 2 Z M 16 4 C 16.554688 4 17 4.445313 17 5 L 17 6 L 20 6 L 20 8 L 12 8 L 12 6 L 15 6 L 15 5 C 15 4.445313 15.445313 4 16 4 Z M 7 6 L 10 6 L 10 10 L 22 10 L 22 6 L 25 6 L 25 27 L 7 27 Z M 21.28125 13.28125 L 15 19.5625 L 11.71875 16.28125 L 10.28125 17.71875 L 14.28125 21.71875 L 15 22.40625 L 15.71875 21.71875 L 22.71875 14.71875 Z" />
+  </symbol>
+  <symbol id="icons.moon" viewBox="0 0 24 24" data-og-pattern="mixed">
+    <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+  </symbol>
+  <symbol id="icons.layout" viewBox="0 0 48 48" data-og-pattern="mixed" data-og-stroke="currentColor" data-og-stroke-width="4" data-og-stroke-linecap="butt" data-og-stroke-linejoin="bevel" data-og-fill="none">
+    <rect x="6" y="6" width="36" height="36" rx="3" />
+    <path d="M6 22L42 22" />
+    <path d="M29 22V6" />
+    <path d="M26 6H32" />
+    <path d="M6 19V25" />
+    <path d="M42 19V25" />
+  </symbol>
+  <symbol id="icons.heart" viewBox="0 0 24 24" data-og-pattern="stroke" data-og-stroke-linecap="round" data-og-stroke-linejoin="round">
+    <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+  </symbol>
+</svg>

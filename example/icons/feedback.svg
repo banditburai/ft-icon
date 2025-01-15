@@ -1,0 +1,26 @@
+<svg 
+  xmlns="http://www.w3.org/2000/svg"
+  width="18"
+  height="18"
+  viewBox="0 0 48 48"
+  fill="none"
+  class="w-5 h-5">
+  <path d="M4 6H44V36H29L24 41L19 36H4V6Z" 
+        fill="none" 
+        stroke="currentColor" 
+        stroke-width="4" 
+        stroke-linecap="butt" 
+        stroke-linejoin="bevel"/>
+  <path d="M23 21H25.0025" 
+        stroke="currentColor" 
+        stroke-width="4" 
+        stroke-linecap="butt"/>
+  <path d="M33.001 21H34.9999" 
+        stroke="currentColor" 
+        stroke-width="4" 
+        stroke-linecap="butt"/>
+  <path d="M13.001 21H14.9999" 
+        stroke="currentColor" 
+        stroke-width="4" 
+        stroke-linecap="butt"/>
+</svg> 
