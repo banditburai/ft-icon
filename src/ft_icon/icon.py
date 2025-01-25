@@ -189,18 +189,16 @@ class Icon(metaclass=IconMeta):
         """Extract OG styling classes from symbol XML"""
         classes = []
         try:
-            # Keep XML parsing improvements from branch
             clean_xml = symbol_xml.replace('xmlns="http://www.w3.org/2000/svg"', '')
             symbol = ET.fromstring(clean_xml)
             
-            # Add arbitrary properties syntax from fix
+            # Handle stroke properties with Tailwind v4 syntax
             if linecap := symbol.get('data-og-stroke-linecap'):
-                classes.append(f"[stroke-linecap:{linecap}]")
-                
+                classes.append(f"stroke-[{linecap}]")
             if linejoin := symbol.get('data-og-stroke-linejoin'):
-                classes.append(f"[stroke-linejoin:{linejoin}]")
+                classes.append(f"stroke-[{linejoin}]")
 
-            # Keep simplified pattern handling from branch
+            # Keep existing pattern handling
             pattern = symbol.get('data-og-pattern', 'mixed')
             if pattern == 'fill':
                 classes.append("fill-current")
