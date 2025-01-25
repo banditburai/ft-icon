@@ -184,58 +184,70 @@ class Icon(metaclass=IconMeta):
             </svg>
         """)
     
-    @staticmethod
-    def _get_og_classes(symbol_xml: str) -> list[str]:
-        """Extract OG classes from symbol XML based on data-og-* attributes"""
-        symbol = ET.fromstring(symbol_xml)
+    @classmethod
+    def _get_og_classes(cls, symbol_xml: str) -> list[str]:
+        """Extract OG styling classes from symbol XML"""
         classes = []
-        
-        # Base styling based on pattern
-        pattern = symbol.get('data-og-pattern')
-        if pattern == 'stroke':
-            classes.extend(['fill-none', 'stroke-current'])
-        elif pattern == 'fill':
-            classes.extend(['fill-current'])
-        elif pattern == 'mixed':
-            if symbol.get('data-og-fill') == 'none':
-                classes.append('fill-none')
-            if symbol.get('data-og-fill') == 'currentColor':
-                classes.append('fill-current')
-            if symbol.get('data-og-stroke') == 'currentColor':
-                classes.append('stroke-current')
-        
-        # Additional style attributes
-        if symbol.get('data-og-stroke-width'):
-            classes.append(f"stroke-{symbol.get('data-og-stroke-width')}")
-        if symbol.get('data-og-fill-rule'):
-            classes.append(f"fill-rule-{symbol.get('data-og-fill-rule')}")
-        if symbol.get('data-og-fill-opacity'):
-            classes.append(f"fill-opacity-{symbol.get('data-og-fill-opacity')}")
-        if symbol.get('data-og-opacity'):
-            classes.append(f"opacity-{symbol.get('data-og-opacity')}")
-        
+        try:
+            # Keep XML parsing improvements from branch
+            clean_xml = symbol_xml.replace('xmlns="http://www.w3.org/2000/svg"', '')
+            symbol = ET.fromstring(clean_xml)
+            
+            # Add arbitrary properties syntax from fix
+            if linecap := symbol.get('data-og-stroke-linecap'):
+                classes.append(f"[stroke-linecap:{linecap}]")
+                
+            if linejoin := symbol.get('data-og-stroke-linejoin'):
+                classes.append(f"[stroke-linejoin:{linejoin}]")
+
+            # Keep simplified pattern handling from branch
+            pattern = symbol.get('data-og-pattern', 'mixed')
+            if pattern == 'fill':
+                classes.append("fill-current")
+            elif pattern == 'stroke':
+                classes.extend(["stroke-current", "fill-none"])
+            else:
+                if symbol.get('data-og-fill') == 'none':
+                    classes.append("fill-none")
+                if symbol.get('data-og-stroke'):
+                    classes.append("stroke-current")
+
+            # Preserve remaining attribute handling
+            if width := symbol.get('data-og-stroke-width'):
+                classes.append(f"stroke-{width}")
+            if fill_rule := symbol.get('data-og-fill-rule'):
+                classes.append(f"fill-rule-{fill_rule}")
+            if fill_opacity := symbol.get('data-og-fill-opacity'):
+                classes.append(f"fill-opacity-{fill_opacity}")
+            if opacity := symbol.get('data-og-opacity'):
+                classes.append(f"opacity-{opacity}")
+                
+        except ET.ParseError as e:
+            logger.error(f"Failed to parse symbol XML: {e}")
+            
         return classes
     
     def __ft__(self) -> NotStr:
         """Generate FastHTML node with appropriate classes"""
         base_classes = ["inline-block"]
         
-        # Add size classes
+        # Style classes FIRST (base styling)
+        if self.style == Style.OG:
+            icon_id = str(self.name).replace("/", ".")
+            if icon_id in self._symbol_cache:
+                og_classes = self._get_og_classes(self._symbol_cache[icon_id])
+                base_classes.extend(og_classes)
+        else:
+            style_classes = self.style.value if isinstance(self.style, Style) else self.style
+            base_classes.extend(style_classes.split())
+        
+        # Size classes AFTER (overrides style dimensions)
         size_classes = (
             config.sizes.get(self.size, config.sizes[Size.MD])
             if isinstance(self.size, Size)
             else self.size
         )
         base_classes.append(size_classes)
-        
-        # Add style classes
-        if self.style == Style.OG:
-            icon_id = str(self.name).replace("/", ".")
-            if icon_id in self._symbol_cache:
-                base_classes.extend(self._get_og_classes(self._symbol_cache[icon_id]))
-        else:
-            style_classes = self.style.value if isinstance(self.style, Style) else self.style
-            base_classes.extend(style_classes.split())
         
         # Merge all classes
         default_classes = " ".join(base_classes)
