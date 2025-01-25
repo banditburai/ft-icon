@@ -189,20 +189,18 @@ class Icon(metaclass=IconMeta):
         """Extract OG styling classes from symbol XML"""
         classes = []
         try:
-            # Create fake root element to handle namespace
-            root = ET.fromstring(f"<root>{symbol_xml}</root>")
-            symbol = root.find(".//*[@id]")  # Find first element with id
+            # Keep XML parsing improvements from branch
+            clean_xml = symbol_xml.replace('xmlns="http://www.w3.org/2000/svg"', '')
+            symbol = ET.fromstring(clean_xml)
             
-            # Directly extract stroke line properties
-            if linecap := (symbol.get('data-og-stroke-linecap') or 
-                          symbol.get('stroke-linecap')):
-                classes.append(f"stroke-linecap-{linecap}")
+            # Add arbitrary properties syntax from fix
+            if linecap := symbol.get('data-og-stroke-linecap'):
+                classes.append(f"[stroke-linecap:{linecap}]")
                 
-            if linejoin := (symbol.get('data-og-stroke-linejoin') or 
-                           symbol.get('stroke-linejoin')):
-                classes.append(f"stroke-linejoin-{linejoin}")
+            if linejoin := symbol.get('data-og-stroke-linejoin'):
+                classes.append(f"[stroke-linejoin:{linejoin}]")
 
-            # Existing pattern handling
+            # Keep simplified pattern handling from branch
             pattern = symbol.get('data-og-pattern', 'mixed')
             if pattern == 'fill':
                 classes.append("fill-current")
@@ -214,15 +212,15 @@ class Icon(metaclass=IconMeta):
                 if symbol.get('data-og-stroke'):
                     classes.append("stroke-current")
 
-            # Add remaining OG attributes
-            if symbol.get('data-og-stroke-width'):
-                classes.append(f"stroke-{symbol.get('data-og-stroke-width')}")
-            if symbol.get('data-og-fill-rule'):
-                classes.append(f"fill-rule-{symbol.get('data-og-fill-rule')}")
-            if symbol.get('data-og-fill-opacity'):
-                classes.append(f"fill-opacity-{symbol.get('data-og-fill-opacity')}")
-            if symbol.get('data-og-opacity'):
-                classes.append(f"opacity-{symbol.get('data-og-opacity')}")
+            # Preserve remaining attribute handling
+            if width := symbol.get('data-og-stroke-width'):
+                classes.append(f"stroke-{width}")
+            if fill_rule := symbol.get('data-og-fill-rule'):
+                classes.append(f"fill-rule-{fill_rule}")
+            if fill_opacity := symbol.get('data-og-fill-opacity'):
+                classes.append(f"fill-opacity-{fill_opacity}")
+            if opacity := symbol.get('data-og-opacity'):
+                classes.append(f"opacity-{opacity}")
                 
         except ET.ParseError as e:
             logger.error(f"Failed to parse symbol XML: {e}")
@@ -233,7 +231,7 @@ class Icon(metaclass=IconMeta):
         """Generate FastHTML node with appropriate classes"""
         base_classes = ["inline-block"]
         
-        # Add style classes FIRST
+        # Style classes FIRST (base styling)
         if self.style == Style.OG:
             icon_id = str(self.name).replace("/", ".")
             if icon_id in self._symbol_cache:
@@ -243,7 +241,7 @@ class Icon(metaclass=IconMeta):
             style_classes = self.style.value if isinstance(self.style, Style) else self.style
             base_classes.extend(style_classes.split())
         
-        # Add size classes AFTER style classes
+        # Size classes AFTER (overrides style dimensions)
         size_classes = (
             config.sizes.get(self.size, config.sizes[Size.MD])
             if isinstance(self.size, Size)
@@ -251,7 +249,7 @@ class Icon(metaclass=IconMeta):
         )
         base_classes.append(size_classes)
         
-        # Merge all classes (style classes now take precedence)
+        # Merge all classes
         default_classes = " ".join(base_classes)
         final_classes = tw_merge(default_classes, self.cls) if self.cls else default_classes
         
