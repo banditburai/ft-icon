@@ -156,10 +156,9 @@ def _generate_types(types_path: Path, categories: Dict[str, List[str]]) -> None:
         f.write("# Generated file - do not edit directly\n\n")
         f.write("from typing import Protocol\n")
         f.write("from ft_icon.icon import Icon\n\n")
-        
-        # Add automatic Tailwind trigger as comment
-        f.write("<!-- Tailwind scan trigger -->\n")
-        f.write("<!-- <div class='[stroke-linecap:round] [stroke-linejoin:round]' hidden aria-hidden='true'></div> -->\n\n")
+                
+        f.write("# <!-- Tailwind scan triggers --> \n")
+        f.write("# [stroke-linecap:round] [stroke-linejoin:round] \n")
         
         f.write("class IconClass(Protocol):\n")
         f.write('    """Available icon methods"""\n')
