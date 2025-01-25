@@ -83,11 +83,24 @@ def _create_symbol_from_svg(svg_file: Path, symbol_id: str) -> ET.Element:
         'opacity': None
     }
     
-    # Find first occurrence of each style and determine pattern
-    for elem in svg_root.findall('.//*'):
+    # Check root element first, then its descendants
+    elements = [svg_root] + list(svg_root.iter())
+    
+    for elem in elements:
+        # Parse both direct attributes and style attribute
+        style_dict = {}
+        if 'style' in elem.attrib:
+            style_dict.update(parse_style_attribute(elem.attrib['style']))
+        
         for style in styles:
-            if style in elem.attrib and styles[style] is None:
-                styles[style] = elem.attrib[style]
+            # Check both direct attribute and style attribute
+            attr_value = elem.attrib.get(style) or style_dict.get(style)
+            if attr_value and styles[style] is None:
+                # Clean stroke-width values (e.g. "2px" -> "2")
+                if style == 'stroke-width' and attr_value.endswith('px'):
+                    attr_value = attr_value[:-2]
+                
+                styles[style] = attr_value
                 if style.startswith('stroke'):
                     has_stroke = True
                 elif style.startswith('fill'):
@@ -119,6 +132,14 @@ def _create_symbol_from_svg(svg_file: Path, symbol_id: str) -> ET.Element:
     
     copy_element(svg_root, symbol)
     return symbol
+
+def parse_style_attribute(style_str: str) -> Dict[str, str]:
+    """Parse SVG style attribute into key-value pairs"""
+    return dict(
+        item.strip().split(":", 1) 
+        for item in style_str.split(";") 
+        if ":" in item
+    )
 
 def _write_sprite_file(sprite_path: Path, root_svg: ET.Element) -> None:
     """Write the sprite file with clean XML output"""
