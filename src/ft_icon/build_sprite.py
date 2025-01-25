@@ -154,8 +154,12 @@ def _generate_types(types_path: Path, categories: Dict[str, List[str]]) -> None:
     """Generate a Python file with type hints"""
     with open(types_path, 'w', encoding='utf-8') as f:
         f.write("# Generated file - do not edit directly\n\n")
-        f.write("from typing import Protocol, ClassVar\n")
+        f.write("from typing import Protocol\n")
         f.write("from ft_icon.icon import Icon\n\n")
+        
+        # Add automatic Tailwind trigger as comment
+        f.write("<!-- Tailwind scan trigger -->\n")
+        f.write("<!-- <div class='[stroke-linecap:round] [stroke-linejoin:round]' hidden aria-hidden='true'></div> -->\n\n")
         
         f.write("class IconClass(Protocol):\n")
         f.write('    """Available icon methods"""\n')
