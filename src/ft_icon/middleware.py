@@ -67,21 +67,28 @@ class _IconSpriteMiddleware:
             # Convert attributes to data-og-* format
             try:
                 root = ET.fromstring(symbol_xml)
-                # Preserve data-og-pattern
-                pattern = root.get('data-og-pattern', '')
-                # Remove existing data-og-pattern to avoid duplication
-                if 'data-og-pattern' in root.attrib:
-                    del root.attrib['data-og-pattern']
                 
-                # Create new attrib dict with data-og- prefixes
-                new_attrib = {'id': root.get('id'), 'data-og-pattern': pattern}
+                # Store pattern and viewBox first
+                pattern = root.get('data-og-pattern', '')
+                view_box = root.get('viewBox')
+                
+                # Create fresh attributes dictionary
+                new_attrib = {
+                    'id': root.get('id'),
+                    'viewBox': view_box,
+                    'data-og-pattern': pattern
+                }
+                
+                # Add prefixed attributes for all except id/viewBox
                 for k, v in root.attrib.items():
-                    if k in ['viewBox', 'id']:
+                    if k in ['id', 'viewBox', 'data-og-pattern']:
                         continue
                     new_attrib[f'data-og-{k}'] = v
                 
-                # Rebuild the symbol element
-                root.attrib = new_attrib
+                # Completely replace attributes
+                root.attrib.clear()
+                root.attrib.update(new_attrib)
+                
                 symbol_xml = ET.tostring(root, encoding='unicode')
                 
             except ET.ParseError as e:
