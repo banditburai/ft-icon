@@ -166,51 +166,21 @@ class Icon(metaclass=IconMeta):
     
     @classmethod
     def get_sprite_defs(cls) -> NotStr:
-        """Get SVG definitions with attributes renamed to data-og-*"""
+        """Get SVG definitions for all icons used on the current page"""
         if not cls._page_icons:
             return NotStr("")
         
-        symbols = []
-        for icon_id in cls._page_icons:
-            symbol_xml = cls._load_symbol(icon_id)
-            if not symbol_xml:
-                continue
-                
-            # Convert attributes to data-og-* format
-            try:
-                root = ET.fromstring(symbol_xml)
-                
-                # Store pattern and viewBox first
-                pattern = root.get('data-og-pattern', '')
-                view_box = root.get('viewBox')
-                
-                # Create fresh attributes dictionary
-                new_attrib = {
-                    'id': root.get('id'),
-                    'viewBox': view_box,
-                    'data-og-pattern': pattern
-                }
-                
-                # Add prefixed attributes for all except id/viewBox
-                for k, v in root.attrib.items():
-                    if k in ['id', 'viewBox', 'data-og-pattern']:
-                        continue
-                    new_attrib[f'data-og-{k}'] = v
-                
-                # Completely replace attributes
-                root.attrib.clear()
-                root.attrib.update(new_attrib)
-                
-                symbol_xml = ET.tostring(root, encoding='unicode')
-                symbols.append(symbol_xml)
-                
-            except ET.ParseError as e:
-                logger.error(f"Error processing {icon_id}: {e}")
-                continue
-
+        symbols = [
+            cls._load_symbol(icon_id)
+            for icon_id in cls._page_icons
+        ]
+        
+        symbols = [s for s in symbols if s]  # Filter out empty symbols
+        logger.debug(f"Generated {len(symbols)} symbol definitions")
+        
         return NotStr(f"""
             <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-                {''.join(symbols)}
+                {' '.join(symbols)}
             </svg>
         """)
     
@@ -254,36 +224,33 @@ class Icon(metaclass=IconMeta):
         return classes
     
     def __ft__(self) -> NotStr:
-        """Generate FastHTML node with appropriate classes"""
         base_classes = ["inline-block"]
         
-        # Style classes FIRST (base styling)
-        if self.style == Style.OG:
-            icon_id = str(self.name).replace("/", ".")
-            if icon_id in self._symbol_cache:
-                og_classes = self._get_og_classes(self._symbol_cache[icon_id])
-                base_classes.extend(og_classes)
-        else:
-            style_classes = self.style.value if isinstance(self.style, Style) else self.style
+        # Add base styling classes
+        if self.style != Style.OG:
+            style_classes = (
+                self.style.value 
+                if isinstance(self.style, Style) 
+                else self.style
+            )
             base_classes.extend(style_classes.split())
         
-        # Size classes AFTER (overrides style dimensions)
+        # Add size classes
         size_classes = (
-            config.sizes.get(self.size, config.sizes[Size.MD])
-            if isinstance(self.size, Size)
+            config.sizes[self.size] 
+            if isinstance(self.size, Size) 
             else self.size
         )
         base_classes.append(size_classes)
         
-        # Merge all classes
-        default_classes = " ".join(base_classes)
-        final_classes = tw_merge(default_classes, self.cls) if self.cls else default_classes
+        # Merge with custom classes
+        final_classes = tw_merge(" ".join(base_classes), self.cls)
         
         icon_id = str(self.name).replace("/", ".")
         self._page_icons.add(icon_id)
         
         return NotStr(
-            f"""<svg class="{final_classes}" data-icon="{icon_id}">
+            f"""<svg class="{final_classes}" data-icon>
                 <use href="#{icon_id}"/>
             </svg>"""
         )
