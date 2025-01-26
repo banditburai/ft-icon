@@ -166,21 +166,51 @@ class Icon(metaclass=IconMeta):
     
     @classmethod
     def get_sprite_defs(cls) -> NotStr:
-        """Get SVG definitions for all icons used on the current page"""
+        """Get SVG definitions with attributes renamed to data-og-*"""
         if not cls._page_icons:
             return NotStr("")
         
-        symbols = [
-            cls._load_symbol(icon_id)
-            for icon_id in cls._page_icons
-        ]
-        
-        symbols = [s for s in symbols if s]  # Filter out empty symbols
-        logger.debug(f"Generated {len(symbols)} symbol definitions")
-        
+        symbols = []
+        for icon_id in cls._page_icons:
+            symbol_xml = cls._load_symbol(icon_id)
+            if not symbol_xml:
+                continue
+                
+            # Convert attributes to data-og-* format
+            try:
+                root = ET.fromstring(symbol_xml)
+                
+                # Store pattern and viewBox first
+                pattern = root.get('data-og-pattern', '')
+                view_box = root.get('viewBox')
+                
+                # Create fresh attributes dictionary
+                new_attrib = {
+                    'id': root.get('id'),
+                    'viewBox': view_box,
+                    'data-og-pattern': pattern
+                }
+                
+                # Add prefixed attributes for all except id/viewBox
+                for k, v in root.attrib.items():
+                    if k in ['id', 'viewBox', 'data-og-pattern']:
+                        continue
+                    new_attrib[f'data-og-{k}'] = v
+                
+                # Completely replace attributes
+                root.attrib.clear()
+                root.attrib.update(new_attrib)
+                
+                symbol_xml = ET.tostring(root, encoding='unicode')
+                symbols.append(symbol_xml)
+                
+            except ET.ParseError as e:
+                logger.error(f"Error processing {icon_id}: {e}")
+                continue
+
         return NotStr(f"""
             <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-                {' '.join(symbols)}
+                {''.join(symbols)}
             </svg>
         """)
     
