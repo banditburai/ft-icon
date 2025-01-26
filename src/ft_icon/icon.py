@@ -189,37 +189,33 @@ class Icon(metaclass=IconMeta):
         """Extract OG styling classes from symbol XML"""
         classes = []
         try:
-            # Keep XML parsing improvements from branch
             clean_xml = symbol_xml.replace('xmlns="http://www.w3.org/2000/svg"', '')
             symbol = ET.fromstring(clean_xml)
             
-            # Add arbitrary properties syntax from fix
-            if linecap := symbol.get('data-og-stroke-linecap'):
+            # Read from original attributes now stored as data-og-* in the DOM
+            if linecap := symbol.get('stroke-linecap'):
                 classes.append(f"[stroke-linecap:{linecap}]")
-                
-            if linejoin := symbol.get('data-og-stroke-linejoin'):
+            if linejoin := symbol.get('stroke-linejoin'):
                 classes.append(f"[stroke-linejoin:{linejoin}]")
 
-            # Keep simplified pattern handling from branch
             pattern = symbol.get('data-og-pattern', 'mixed')
             if pattern == 'fill':
                 classes.append("fill-current")
             elif pattern == 'stroke':
                 classes.extend(["stroke-current", "fill-none"])
             else:
-                if symbol.get('data-og-fill') == 'none':
+                if symbol.get('fill') == 'none':
                     classes.append("fill-none")
-                if symbol.get('data-og-stroke'):
+                if symbol.get('stroke'):
                     classes.append("stroke-current")
 
-            # Preserve remaining attribute handling
-            if width := symbol.get('data-og-stroke-width'):
+            if width := symbol.get('stroke-width'):
                 classes.append(f"stroke-{width}")
-            if fill_rule := symbol.get('data-og-fill-rule'):
+            if fill_rule := symbol.get('fill-rule'):
                 classes.append(f"fill-rule-{fill_rule}")
-            if fill_opacity := symbol.get('data-og-fill-opacity'):
+            if fill_opacity := symbol.get('fill-opacity'):
                 classes.append(f"fill-opacity-{fill_opacity}")
-            if opacity := symbol.get('data-og-opacity'):
+            if opacity := symbol.get('opacity'):
                 classes.append(f"opacity-{opacity}")
                 
         except ET.ParseError as e:
@@ -228,36 +224,33 @@ class Icon(metaclass=IconMeta):
         return classes
     
     def __ft__(self) -> NotStr:
-        """Generate FastHTML node with appropriate classes"""
         base_classes = ["inline-block"]
         
-        # Style classes FIRST (base styling)
-        if self.style == Style.OG:
-            icon_id = str(self.name).replace("/", ".")
-            if icon_id in self._symbol_cache:
-                og_classes = self._get_og_classes(self._symbol_cache[icon_id])
-                base_classes.extend(og_classes)
-        else:
-            style_classes = self.style.value if isinstance(self.style, Style) else self.style
+        # Add base styling classes
+        if self.style != Style.OG:
+            style_classes = (
+                self.style.value 
+                if isinstance(self.style, Style) 
+                else self.style
+            )
             base_classes.extend(style_classes.split())
         
-        # Size classes AFTER (overrides style dimensions)
+        # Add size classes
         size_classes = (
-            config.sizes.get(self.size, config.sizes[Size.MD])
-            if isinstance(self.size, Size)
+            config.sizes[self.size] 
+            if isinstance(self.size, Size) 
             else self.size
         )
         base_classes.append(size_classes)
         
-        # Merge all classes
-        default_classes = " ".join(base_classes)
-        final_classes = tw_merge(default_classes, self.cls) if self.cls else default_classes
+        # Merge with custom classes
+        final_classes = tw_merge(" ".join(base_classes), self.cls)
         
         icon_id = str(self.name).replace("/", ".")
         self._page_icons.add(icon_id)
         
         return NotStr(
-            f"""<svg class="{final_classes}" data-icon="{icon_id}">
+            f"""<svg class="{final_classes}" data-icon>
                 <use href="#{icon_id}"/>
             </svg>"""
         )
