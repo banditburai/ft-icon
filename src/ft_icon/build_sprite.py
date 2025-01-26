@@ -114,10 +114,10 @@ def _create_symbol_from_svg(svg_file: Path, symbol_id: str) -> ET.Element:
     else:
         symbol.set('data-og-pattern', 'mixed')
     
-    # Apply collected styles to symbol level
+    # Apply collected styles directly without data-og prefix
     for style, value in styles.items():
         if value is not None:
-            symbol.set(f'data-og-{style}', value)
+            symbol.set(style, value)
     
     # Copy structure without style attributes
     def copy_element(src: ET.Element, dest: ET.Element):
@@ -155,10 +155,7 @@ def _generate_types(types_path: Path, categories: Dict[str, List[str]]) -> None:
     with open(types_path, 'w', encoding='utf-8') as f:
         f.write("# Generated file - do not edit directly\n\n")
         f.write("from typing import Protocol\n")
-        f.write("from ft_icon.icon import Icon\n\n")
-                
-        f.write("# <!-- Tailwind scan triggers --> \n")
-        f.write("# [stroke-linecap:round] [stroke-linejoin:round] \n")
+        f.write("from ft_icon.icon import Icon\n\n")                
         
         f.write("class IconClass(Protocol):\n")
         f.write('    """Available icon methods"""\n')
